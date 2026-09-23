@@ -1,0 +1,88 @@
+/*comment*/
+
+/* 1 --- Global Variable --- 1 */
+:root{
+    --color-body: #C35817;
+    --color-bg-section: hsla(21, 100%, 50%, 0.715);
+    --color-font-body: black;
+    --img-board: url('../img/water.webp');
+    --color-board-frame: brown;
+    --img-cardback: url('../img/BACK.png');
+    --img-cardfront1: url('../img/Normal_bg.webp');
+    --img-cardfront2: url('../img/Pasisve_bg.webp');
+}
+
+body{
+    background-color:var(--color-bg-section);
+    color:var(--color-font-body);
+}
+
+#zen-explanation{--pos-top: 100px; --pos-left:400px; --front-color: var(--img-cardfront1); z-index: 10;}
+#zen-participation{--pos-top: 200px; --pos-left:50px; --front-color: var(--img-cardfront2);}
+#zen-summary, #zen-preamble, #zen-benefits, #zen-requirements{display:none;}
+
+#zen-participation h3 + p{
+    /*
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    */  
+    text-transform: uppercase;
+
+
+}
+
+.page-wrapper{
+    background-image: var(--img-board);
+    position: absolute;
+    right: 30px;
+    width: 80%;
+    height: 100vh;
+
+    border: 10px solid var(--color-board-frame);
+}
+
+/* layout */
+
+/* realtive positioning */
+
+header h2 abbr{
+    position: relative;    
+    top: -10px;
+    font-size: 2em;
+}
+
+article{
+    position:absolute;
+    top: var(--pos-top);
+    left: var(--pos-left);
+    background-image: var(--front-color);
+    width: 300px;
+    height: 50vh;
+    overflow: scroll;
+}
+
+footer,aside{
+    display: none;
+}
+
+/* web font */
+
+@font-face {
+    font-family: 'myfont';
+    src: url('../fonts/chunkfive.woff') format('woff'), 
+    url('../fonts/chunkfive.svg') format('svg');
+}
+
+header h2{
+    font-family: 'myfont', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+header h1 {
+    font-family: "Playwrite BE WAL Guides", cursive;
+    font-size: 2em;
+
+
+}
+
